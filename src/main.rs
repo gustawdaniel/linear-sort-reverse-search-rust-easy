@@ -1,7 +1,7 @@
-use linear_sort_reverse_search_rust_easy::upcase;
+use linear_sort_reverse_search_rust_easy::reverse_search;
 use std::io;
 
 fn main() -> io::Result<()> {
-    upcase(&mut io::stdin(), &mut io::stdout())
+    reverse_search(&mut io::stdin(), &mut io::stdout())
 }
 

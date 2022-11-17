@@ -5,16 +5,26 @@ mod tests {
     use super::*;
 
     #[test]
-    fn writes_upcased_input_to_output() {
+    fn basic_test() {
         let mut output: Vec<u8> = Vec::new();
 
-        upcase(&mut "5 1
+        reverse_search(&mut "5 1
 1 2 3 4 1".as_bytes(), &mut output).unwrap();
         assert_eq!(&output, b"5\n");
     }
+
+
+    #[test]
+    fn not_found_test() {
+        let mut output: Vec<u8> = Vec::new();
+
+        reverse_search(&mut "5 7
+1 2 3 4 1".as_bytes(), &mut output).unwrap();
+        assert_eq!(&output, b"-1\n");
+    }
 }
 
-pub fn upcase(
+pub fn reverse_search(
     handle: &mut impl Read ,
     output: &mut impl Write,
 ) -> Result<(), Error> {
@@ -22,21 +32,12 @@ pub fn upcase(
     let mut out = "".to_string();
     handle.read_to_string(&mut buffer)?;
 
-    // println!("{:?}", buffer.lines());
-    //
-    // out = format!("ok {} \n", buffer);
-    // out = format!("{}, ok {} \n", out, buffer);
-
-    // // let handle = io::stdin();
     let mut lines = buffer.lines();
-
 
     let mut some_line = match lines.next() {
         Some(line) => line,
         _ => ""
     };
-
-
 
     let mut iterator = some_line.split_ascii_whitespace();
 
@@ -48,8 +49,6 @@ pub fn upcase(
         Some(p) => p.trim().parse().expect("can't read"),
         None => 0
     };
-
-
 
     some_line = match lines.next() {
         Some(line) => line,
