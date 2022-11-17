@@ -1,5 +1,5 @@
 [package]
-name = "linear-sort-reverse-search-rust-easy"
+name = "linear_sort_reverse_search_rust_easy"
 version = "0.1.0"
 edition = "2021"
 
