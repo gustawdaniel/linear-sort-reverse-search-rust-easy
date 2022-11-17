@@ -1,5 +1,7 @@
 # linear-sort-reverse-search-rust-easy
 
+[![Rust](https://github.com/gustawdaniel/linear-sort-reverse-search-rust-easy/actions/workflows/rust.yml/badge.svg)](https://github.com/gustawdaniel/linear-sort-reverse-search-rust-easy/actions/workflows/rust.yml)
+
 Project described here:
 
 https://preciselab.io/last-occurrence/
